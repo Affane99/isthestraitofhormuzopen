@@ -1,0 +1,35 @@
+{
+  "override": null,
+  "overrideReason": null,
+  "baselineTransitsPerDay": 88,
+  "closureDeclaredOn": "2026-02-28",
+  "manualFacts": {
+    "warRiskInsuranceMultiplier": "8x",
+    "majorCarriersSuspended": 8,
+    "strandedVesselsApprox": 380,
+    "centralChannelMined": true
+  },
+  "funnySubtexts": {
+    "OPEN": [
+      "Yes! For now. Refresh tomorrow.",
+      "Open. The insurers remain unconvinced, but open.",
+      "Open, in the same way it has been 'open' since 1959: with caveats.",
+      "Ships are moving and everyone is being extremely casual about it.",
+      "Yes. The paperwork says yes, the water says yes, even the spokespeople say yes. Enjoy it."
+    ],
+    "COMPLICATED": [
+      "It's open the way a haunted house is open.",
+      "Depends which route, which government spokesperson, and which day of the week.",
+      "Schrödinger's strait: simultaneously open and closed until a tanker observes it.",
+      "Three routes: one mined, one needs a permit from Tehran, one needs a naval escort. Pick your adventure.",
+      "The answer currently involves four navies, two press releases, and one very tired insurance actuary."
+    ],
+    "CLOSED": [
+      "Well, Iran says no, Washington says yes, and the insurers say 8x the normal premium. So: no.",
+      "Technically there's water. Boats are another story.",
+      "Day {N} of 'it's complicated', except now it's just closed.",
+      "The strait is currently accepting press releases. It is not currently accepting ships.",
+      "Closed. Not 'closed for lunch' closed. Closed closed."
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+  --muted: #6b7280;
+  --line: #e5e5e5;
+  --surface: #f1f1f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #9ca3af;
+    --line: #262626;
+    --surface: #111113;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* Subtle radial glow, adapts to both themes. No stock photos, no cheap boats. */
+  background-image: radial-gradient(
+    1100px 550px at 50% -10%,
+    color-mix(in oklab, var(--foreground) 5%, transparent),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+}
+
+/* The giant verdict. Must be perfect on a 360px screen. */
+.verdict {
+  font-size: clamp(4rem, 18vw, 14rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  animation: verdict-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes verdict-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.chevron {
+  animation: chevron-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes chevron-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verdict,
+  .chevron {
+    animation: none;
+  }
+}
