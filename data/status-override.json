@@ -1,6 +1,6 @@
 {
-  "override": null,
-  "overrideReason": null,
+  "override": "CLOSED",
+  "overrideReason": "Jul 12: Iran's IRGC declared the strait closed 'until further notice' after attacks on commercial shipping; Washington disputes it and reports escorted transits continuing. Verified transit data lags several days behind.",
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "manualFacts": {

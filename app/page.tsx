@@ -125,6 +125,11 @@ export default async function Page() {
           {VERDICT_WORD[result.status]}
         </h1>
         <p className="mt-6 max-w-xl text-xl italic text-muted">{subtext}</p>
+        {result.source === "editorial" && editorialConfig.overrideReason && (
+          <p className="mt-4 max-w-xl text-sm text-muted">
+            Editors’ note — {editorialConfig.overrideReason}
+          </p>
+        )}
         {result.stale && (
           <p className="mt-3 text-sm text-muted">
             Last known data: {transit.transitsPerDay} ships/day on{" "}
@@ -207,6 +212,7 @@ export default async function Page() {
               <p className="mt-1 text-sm text-muted">
                 IMF PortWatch
                 {transit.source !== "portwatch" && " · last cached figure"}
+                {" · published with a ~5–7 day lag"}
               </p>
             </div>
           </div>
