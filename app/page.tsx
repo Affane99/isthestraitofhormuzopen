@@ -56,6 +56,12 @@ function formatDate(iso: string): string {
   });
 }
 
+/** Reported figures are shown only while they are fresher than the verified series. */
+function freshReported(transit: TransitData) {
+  const reported = editorialConfig.reportedTransits;
+  return reported !== null && reported.asOf > transit.dataDate ? reported : null;
+}
+
 function plainAnswer(result: StatusResult, transit: TransitData): string {
   const lead: Record<Status, string> = {
     OPEN: "Yes, the Strait of Hormuz is currently open to commercial traffic.",
@@ -64,7 +70,13 @@ function plainAnswer(result: StatusResult, transit: TransitData): string {
     CLOSED:
       "No, the Strait of Hormuz is effectively closed to normal commercial traffic.",
   };
-  return `${lead[result.status]} Latest verified IMF PortWatch data (${formatDate(
+  const reported = freshReported(transit);
+  const reportedSentence = reported
+    ? ` Traffic reported around ${reported.range} transits per day as of ${formatDate(
+        reported.asOf,
+      )} (${reported.source}).`
+    : "";
+  return `${lead[result.status]}${reportedSentence} Latest verified IMF PortWatch data (${formatDate(
     transit.dataDate,
   )}): ${transit.transitsPerDay} ship transits per day versus a pre-crisis baseline of about ${
     editorialConfig.baselineTransitsPerDay
@@ -74,11 +86,18 @@ function plainAnswer(result: StatusResult, transit: TransitData): string {
 export async function generateMetadata(): Promise<Metadata> {
   const { transit, result } = await getVerdict();
   const title = `Is the Strait of Hormuz Open? ${TITLE_WORD[result.status]} — Live Status`;
-  const description = `Current answer: ${TITLE_WORD[result.status]}. Latest verified IMF PortWatch data (${formatDate(
-    transit.dataDate,
-  )}): ${transit.transitsPerDay} ships/day vs ~${
-    editorialConfig.baselineTransitsPerDay
-  } before the crisis.`;
+  const reported = freshReported(transit);
+  const description = reported
+    ? `Current answer: ${TITLE_WORD[result.status]}. Reported traffic ~${reported.range} ships/day (${formatDate(
+        reported.asOf,
+      )}); last verified: ${transit.transitsPerDay}/day on ${formatDate(
+        transit.dataDate,
+      )} (IMF PortWatch), vs ~${editorialConfig.baselineTransitsPerDay} before the crisis.`
+    : `Current answer: ${TITLE_WORD[result.status]}. Latest verified IMF PortWatch data (${formatDate(
+        transit.dataDate,
+      )}): ${transit.transitsPerDay} ships/day vs ~${
+        editorialConfig.baselineTransitsPerDay
+      } before the crisis.`;
   return {
     title,
     description,
@@ -98,6 +117,12 @@ export default async function Page() {
 
   const ratioPercent =
     result.ratio !== null ? Math.min(100, Math.round(result.ratio * 100)) : 0;
+
+  const reported = freshReported(transit);
+  const reportedPercent =
+    reported && baselineTransitsPerDay > 0
+      ? Math.min(100, Math.round((reported.midpoint / baselineTransitsPerDay) * 100))
+      : 0;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -172,19 +197,44 @@ export default async function Page() {
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-lg border border-line p-5">
               <p className="text-sm text-muted">Transits</p>
-              <p className="mt-2 text-3xl font-bold">
-                {transit.transitsPerDay}
-                <span className="text-base font-normal text-muted"> ships/day</span>
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                vs ~{baselineTransitsPerDay} normal
-              </p>
-              <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${ratioPercent}%`, backgroundColor: color }}
-                />
-              </div>
+              {reported ? (
+                <>
+                  <p className="mt-2 text-3xl font-bold">
+                    ~{reported.range}
+                    <span className="text-base font-normal text-muted"> ships/day</span>
+                  </p>
+                  <p className="mt-1 text-sm text-muted">
+                    reported {formatDate(reported.asOf)} · vs ~{baselineTransitsPerDay}{" "}
+                    normal
+                  </p>
+                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${reportedPercent}%`, backgroundColor: color }}
+                    />
+                  </div>
+                  <p className="mt-2 text-xs text-muted">
+                    Last verified: {transit.transitsPerDay}/day on{" "}
+                    {formatDate(transit.dataDate)}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="mt-2 text-3xl font-bold">
+                    {transit.transitsPerDay}
+                    <span className="text-base font-normal text-muted"> ships/day</span>
+                  </p>
+                  <p className="mt-1 text-sm text-muted">
+                    vs ~{baselineTransitsPerDay} normal
+                  </p>
+                  <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${ratioPercent}%`, backgroundColor: color }}
+                    />
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="rounded-lg border border-line p-5">

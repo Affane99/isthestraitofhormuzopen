@@ -13,11 +13,25 @@ export interface ManualFacts {
   centralChannelMined: boolean;
 }
 
+/**
+ * Freshest credible transit figure when the verified series lags the news —
+ * e.g. UKMTO/JMIC numbers relayed by the press. Always displayed with its
+ * date and source, never presented as verified data. Null when PortWatch
+ * is current enough.
+ */
+export interface ReportedTransits {
+  range: string;
+  midpoint: number;
+  asOf: string;
+  source: string;
+}
+
 export interface EditorialConfig {
   override: Status | null;
   overrideReason: string | null;
   baselineTransitsPerDay: number;
   closureDeclaredOn: string;
+  reportedTransits: ReportedTransits | null;
   manualFacts: ManualFacts;
   funnySubtexts: Record<Status, string[]>;
 }
@@ -37,4 +51,6 @@ const safeOverride: Status | null =
 export const editorialConfig: EditorialConfig = {
   ...parsed,
   override: safeOverride,
+  // Tolerate the key being deleted from the JSON entirely.
+  reportedTransits: parsed.reportedTransits ?? null,
 };

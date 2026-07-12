@@ -78,6 +78,26 @@ war-risk insurance multiplier, suspended carriers, stranded vessels, mined
 central channel) — nothing on the site is invented, every number comes from
 PortWatch or this file.
 
+### Fresher-than-PortWatch figures: `reportedTransits`
+
+PortWatch is the *verified* series but publishes with a ~5–7 day lag. When
+credible fresher numbers exist (UKMTO/JMIC figures relayed by the press),
+put them in `reportedTransits`:
+
+```jsonc
+"reportedTransits": {
+  "range": "11–17",         // shown as "~11–17 ships/day"
+  "midpoint": 14,            // drives the progress bar
+  "asOf": "2026-07-10",     // shown next to the figure
+  "source": "JMIC/UKMTO figures via press reports"
+}
+```
+
+The Transits card then leads with the reported figure (dated, labeled
+"reported") and demotes the verified figure to a footnote. The block is
+ignored automatically as soon as PortWatch catches up (`asOf` older than the
+latest verified data point), and can be set to `null` to disable it manually.
+
 ### Adding funny subtexts
 
 Add lines to the `funnySubtexts` arrays (the pool currently holds ~13 per
