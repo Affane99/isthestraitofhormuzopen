@@ -15,21 +15,45 @@
       "Open. The insurers remain unconvinced, but open.",
       "Open, in the same way it has been 'open' since 1959: with caveats.",
       "Ships are moving and everyone is being extremely casual about it.",
-      "Yes. The paperwork says yes, the water says yes, even the spokespeople say yes. Enjoy it."
+      "Yes. The paperwork says yes, the water says yes, even the spokespeople say yes. Enjoy it.",
+      "Yes, empirically. A tanker went in and, crucially, came back out.",
+      "Yes. Do not ask a follow-up question.",
+      "Open. The font size overstates our confidence.",
+      "Open. Status valid at time of printing. Do not laminate.",
+      "Yes. Status may change without notice. This is the notice.",
+      "Open. The risk desk upgraded it from 'absolutely not' to 'get it in writing'.",
+      "Yes, per Notice to Mariners 114/26. Kindly disregard Notices 89 through 113.",
+      "Yes. The strait itself declined to comment."
     ],
     "COMPLICATED": [
       "It's open the way a haunted house is open.",
       "Depends which route, which government spokesperson, and which day of the week.",
       "Schrödinger's strait: simultaneously open and closed until a tanker observes it.",
       "Three routes: one mined, one needs a permit from Tehran, one needs a naval escort. Pick your adventure.",
-      "The answer currently involves four navies, two press releases, and one very tired insurance actuary."
+      "The answer currently involves four navies, two press releases, and one very tired insurance actuary.",
+      "Your transit window is Tuesday, 0400 to 0600, weather and diplomacy permitting.",
+      "It depends. That is, unfortunately, the entire website.",
+      "'Strategic ambiguity' is now an official navigational status.",
+      "Diplomats say 'partially open.' Cartographers have asked how to draw that.",
+      "Passable. In both senses of the word.",
+      "Officially, 'the situation remains fluid.' So is the water. Neither helps.",
+      "Sort of. This is also the official position of several governments.",
+      "Yes, with an asterisk. The asterisk has an asterisk."
     ],
     "CLOSED": [
       "Well, Iran says no, Washington says yes, and the insurers say 8x the normal premium. So: no.",
       "Technically there's water. Boats are another story.",
       "Day {N} of 'it's complicated', except now it's just closed.",
       "The strait is currently accepting press releases. It is not currently accepting ships.",
-      "Closed. Not 'closed for lunch' closed. Closed closed."
+      "Closed. Not 'closed for lunch' closed. Closed closed.",
+      "No. Eight of nine major carriers looked at the map and chose Africa.",
+      "Closed. The Notices to Mariners stopped saying 'exercise caution' and now just say 'don't.'",
+      "Open in principle. Ships do not float on principle.",
+      "No. The harbormaster's log for today reads, in full: 'quiet.'",
+      "No. Reality has been briefed on the official position and declined to update.",
+      "No. This week's convoy schedule is a letterhead and white space.",
+      "Closed. You cannot insure a press release.",
+      "Day {N} of the word 'open' being stress-tested well beyond its design tolerances."
     ]
   }
 }

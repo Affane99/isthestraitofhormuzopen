@@ -80,9 +80,10 @@ PortWatch or this file.
 
 ### Adding funny subtexts
 
-Add lines to the `funnySubtexts` arrays (5 per status is a good number). One
-is picked at random server-side on each regeneration. `{N}` is replaced with
-the day count since the closure declaration.
+Add lines to the `funnySubtexts` arrays (the pool currently holds ~13 per
+status). One is picked at random server-side on each regeneration — the page
+regenerates hourly, so the line rotates through the day. `{N}` is replaced
+with the day count since the closure declaration.
 
 **The red line:** jokes target geopolitical and bureaucratic absurdity —
 never stranded seafarers, casualties, or nationalities.
@@ -111,6 +112,14 @@ curl -X POST https://<your-domain>/api/refresh \
 
 All environment variables are documented in [`.env.example`](.env.example).
 No API keys are needed — PortWatch is public.
+
+## Analytics
+
+The site uses [Vercel Web Analytics](https://vercel.com/docs/analytics) —
+anonymous and cookie-less (no consent banner needed). Visitors and page views
+appear in the Vercel dashboard under **Project → Analytics**. It was enabled
+with `vercel project web-analytics`; the client side is the `<Analytics />`
+component in [`app/layout.tsx`](app/layout.tsx).
 
 ## Development
 
