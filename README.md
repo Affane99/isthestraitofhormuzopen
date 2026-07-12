@@ -99,12 +99,15 @@ curl -X POST https://<your-domain>/api/refresh \
 - **`REFRESH_SECRET`** — set it in Vercel (Project → Settings → Environment
   Variables). Any long random string, e.g. `openssl rand -hex 32`.
 - **Vercel Cron** — [`vercel.json`](vercel.json) schedules a call to
-  `/api/refresh` every 6 hours. Vercel Cron sends **GET** requests and, when a
-  **`CRON_SECRET`** env var exists, adds `Authorization: Bearer $CRON_SECRET`
-  automatically — so also set `CRON_SECRET` in Vercel. The route accepts
-  either secret and fails closed (401) when none is configured.
-- A GitHub Actions cron can hit the same endpoint with `REFRESH_SECRET` if you
-  prefer not to use Vercel Cron.
+  `/api/refresh` once a day (06:00 UTC): the Hobby plan caps crons at daily,
+  and hourly ISR does the real freshness work anyway. Vercel Cron sends
+  **GET** requests and, when a **`CRON_SECRET`** env var exists, adds
+  `Authorization: Bearer $CRON_SECRET` automatically — so also set
+  `CRON_SECRET` in Vercel. The route accepts either secret and fails closed
+  (401) when none is configured.
+- Want the original 6-hourly cadence on the free plan? Use a GitHub Actions
+  cron hitting the same endpoint with `REFRESH_SECRET` (or upgrade to Pro and
+  restore `0 */6 * * *` in `vercel.json`).
 
 All environment variables are documented in [`.env.example`](.env.example).
 No API keys are needed — PortWatch is public.
