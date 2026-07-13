@@ -4,10 +4,10 @@
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "reportedTransits": {
-    "range": "11–17",
-    "midpoint": 14,
-    "asOf": "2026-07-10",
-    "source": "JMIC/UKMTO figures via press reports"
+    "range": "21",
+    "midpoint": 21,
+    "asOf": "2026-07-11",
+    "source": "Windward Maritime Intelligence (12 outbound, 9 inbound) via press reports"
   },
   "manualFacts": {
     "warRiskInsuranceMultiplier": "8x",
