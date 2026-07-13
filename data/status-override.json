@@ -4,10 +4,10 @@
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "reportedTransits": {
-    "range": "21",
-    "midpoint": 21,
-    "asOf": "2026-07-11",
-    "source": "Windward Maritime Intelligence (12 outbound, 9 inbound) via press reports"
+    "range": "6",
+    "midpoint": 6,
+    "asOf": "2026-07-12",
+    "source": "Kpler data via Reuters press reports (six tankers transited Sunday, lowest since May 25; AIS transponders increasingly switched off, likely undercounting)"
   },
   "manualFacts": {
     "warRiskInsuranceMultiplier": "8x",
