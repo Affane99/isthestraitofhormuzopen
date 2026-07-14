@@ -1,6 +1,6 @@
 {
   "override": "CLOSED",
-  "overrideReason": "Jul 12: Iran's IRGC declared the strait closed 'until further notice' after attacks on commercial shipping; Washington disputes it and reports escorted transits continuing. Verified transit data lags several days behind.",
+  "overrideReason": "Jul 13: Iran struck two UAE-operated tankers with cruise missiles in the strait's southern route, killing one crew member and wounding eight, prompting fresh US strikes on Iran; Kpler data showed just six tankers, transponders off, crossing on Jul 12 — the lowest since May 25. Verified transit data lags several days behind.",
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "reportedTransits": {
