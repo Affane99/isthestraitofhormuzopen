@@ -12,7 +12,7 @@
   "manualFacts": {
     "warRiskInsuranceMultiplier": "8x",
     "majorCarriersSuspended": 8,
-    "strandedVesselsApprox": 550,
+    "strandedVesselsApprox": 1150,
     "centralChannelMined": true
   },
   "funnySubtexts": {
