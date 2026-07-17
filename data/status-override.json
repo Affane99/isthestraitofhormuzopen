@@ -1,13 +1,13 @@
 {
   "override": "CLOSED",
-  "overrideReason": "Jul 15: the US naval blockade of Iranian ports remained in force a second day and the IMO's Secretary-General warned the Strait of Hormuz is too dangerous for commercial transit; Kpler ship-tracking data (via Reuters) showed just 7 vessels crossed the strait Wed Jul 15, mostly via the Iranian route, down from 13 the previous day — both a fraction of the ~88/day baseline. Iranian cruise missiles struck the VLCCs Mombasa B and Al Bahyah in the southern shipping lane Jul 14, killing one crew member. Verified transit data lags several days behind.",
+  "overrideReason": "Jul 16: just 3 commodity vessels crossed the Strait of Hormuz, the fewest daily transits since May and down from 7 the previous day, with no VLCC or LNG tankers transiting for a second straight day, per Kpler ship-tracking data; the US naval blockade of Iranian ports remained in force and the IMO's Secretary-General has warned the strait is too dangerous for commercial transit. Verified transit data lags several days behind.",
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "reportedTransits": {
-    "range": "7",
-    "midpoint": 7,
-    "asOf": "2026-07-15",
-    "source": "Kpler ship-tracking data via Reuters: 7 vessels crossed the strait Wed Jul 15, mostly via the Iranian route, down from 13 the previous day, the first full day after the US naval blockade took effect; AIS transponders increasingly switched off, likely undercounting"
+    "range": "3",
+    "midpoint": 3,
+    "asOf": "2026-07-16",
+    "source": "Kpler ship-tracking data (via AP wire reports): just 3 commodity vessels crossed the strait Thu Jul 16, the fewest daily transits since May, down from 7 the previous day; no VLCC or LNG tankers transited the strait for a second straight day; AIS transponders increasingly switched off, likely undercounting"
   },
   "manualFacts": {
     "warRiskInsuranceMultiplier": "8x",
