@@ -1,13 +1,13 @@
 {
   "override": "CLOSED",
-  "overrideReason": "Jul 16: confirmed Strait of Hormuz crossings fell to 8, the lowest level in three weeks and down from 15 the previous day, with 7 of the 8 transits using the riskier Iranian route rather than the US-protected Omani corridor, per Kpler ship-tracking data; the US naval blockade of Iranian ports remains in force after the ceasefire broke down Jul 14, and JMIC advisories continue to warn the strait is too dangerous for normal commercial transit. Verified transit data lags several days behind.",
+  "overrideReason": "Jul 17-18: Hormuz traffic remains near a standstill at just 10 transits (5 inbound, 5 outbound) in the 24 hours to Jul 17 per USNI News, down from a pre-crisis baseline of 88/day; the US naval blockade of Iranian ports imposed after the Jul 14 ceasefire collapse remains in force, Iran's IRGC says it stopped four vessels attempting a US-protected transit and struck two tankers with mines south of the strait on Jul 18 (a claim US CENTCOM disputes as false), and JMIC/UKMTO continue to rate the regional maritime threat SEVERE. Verified transit data lags several days behind.",
   "baselineTransitsPerDay": 88,
   "closureDeclaredOn": "2026-02-28",
   "reportedTransits": {
-    "range": "8",
-    "midpoint": 8,
-    "asOf": "2026-07-16",
-    "source": "Kpler ship-tracking data (via Kpler's official reporting, picked up by Marine Log, Times of Israel, MarineLink): confirmed Strait of Hormuz crossings fell to 8 on Jul 16, the lowest level in three weeks, down from 15 the previous day; 7 of the 8 transits used the Iranian route; no shadow fleet crossings recorded"
+    "range": "10",
+    "midpoint": 10,
+    "asOf": "2026-07-17",
+    "source": "USNI News: Strait of Hormuz traffic hit a bottleneck of only 10 total transits (5 inbound, 5 outbound) in the 24 hours to Jul 17, under the US naval blockade reinstated Jul 14; 2 of the 5 inbound transits went dark and one bulk carrier reversed course before completing its crossing (prior data point: Kpler reported crossings falling to 8 on Jul 16, down from 15 on Jul 15)"
   },
   "manualFacts": {
     "warRiskInsuranceMultiplier": "20x",
