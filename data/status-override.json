@@ -10,7 +10,7 @@
     "source": "Kpler ship-tracking data (via Kpler's official reporting, picked up by Marine Log, Times of Israel, MarineLink): confirmed Strait of Hormuz crossings fell to 8 on Jul 16, the lowest level in three weeks, down from 15 the previous day; 7 of the 8 transits used the Iranian route; no shadow fleet crossings recorded"
   },
   "manualFacts": {
-    "warRiskInsuranceMultiplier": "8x",
+    "warRiskInsuranceMultiplier": "20x",
     "majorCarriersSuspended": 8,
     "strandedVesselsApprox": 1150,
     "centralChannelMined": true
